@@ -1,0 +1,25 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1568582284779-3c8dcbe714af?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=800);">
+  <div class="container">
+    <h1><%= link_to "loco roco coco cocktails", cocktails_path, class: "text-success text-decoration-none" %></h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+      <% @cocktails.each do |cocktail| %>
+          <div class="card-category col-6" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/300x150/?cocktail)">
+            <%= link_to cocktail.name, cocktail_path(cocktail), class:"text-info text-decoration-none" %>
+          </div>
+      <% end %>
+    </div>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <%= link_to "create new cocktail", new_cocktail_path %>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+  </div>
+</div>
